@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +26,15 @@ export class RecipesService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  fetchPerson() {
+    this.http.get<any>('https://swapi.co/api/people')
+      .pipe(map(resData => {
+        return resData.results.map(character => character.name);
+      }))
+      .subscribe(response => console.log(response));
+  }
 
   getAllRecipe() {
     return [...this.recipes];

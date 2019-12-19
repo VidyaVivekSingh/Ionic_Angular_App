@@ -20,6 +20,7 @@ export class RecipesPage implements OnInit, OnDestroy {
     //     this.recipes = this.RecipeService.getAllRecipe();
     //   }
     // });
+    this.RecipeService.fetchPerson();
     this.recipes = this.RecipeService.getAllRecipe();
     this.recipeSubs = this.RecipeService.recipeChanged.subscribe(recipe => {
       this.recipes = recipe;

@@ -1,0 +1,9 @@
+{
+  "appId": "com.myfirst.ionicangularapp",
+  "appName": "My_First_Ionic_App_With_Angular",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {},
+  "linuxAndroidStudioPath": "/snap/android-studio/current/android-studio/bin/studio.sh"
+}

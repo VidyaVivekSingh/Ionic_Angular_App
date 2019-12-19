@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <h1 *ngIf="loading">Loading....</h1>
+  <ion-list *ngIf="!loading">
     <app-recipe-item
       *ngFor="let recipe of recipes"
       [recipeItem]="recipe"

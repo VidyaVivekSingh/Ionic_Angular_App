@@ -29,7 +29,9 @@ export class RecipesService {
   constructor(private http: HttpClient) { }
 
   fetchPerson() {
-    this.http.get<any>('https://swapi.co/api/people')
+    const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+    const url = 'https://swapi.co/api/people';
+    this.http.get<any>(proxyurl + url)
       .pipe(map(resData => {
         return resData.results.map(character => character.name);
       }))

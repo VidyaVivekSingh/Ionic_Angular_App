@@ -32,7 +32,7 @@ export class RecipesDetailPage implements OnInit {
       this.loadedRecipe = this.recipeService.getRecipe(recipeId);
     });
   }
-  onDeleteRecipe = () => {
+  onDeleteRecipe() {
     this.alertCtrl.create({
       header: 'Are You Sure?', message: 'Do you really want to delete the item?', buttons: [{
         text: 'Cancel',
